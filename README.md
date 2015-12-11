@@ -36,4 +36,4 @@ _($sText_id [, $sPar1 [, $sParn ] ] )
 
 The parameters are optional, but the maximum number of parameters is 32. If you need more than 32 parameters (sure?), please consider splitting your string into multiple ones.
 
-Note that everything is explained on the example. See (Example.au3)[Example.au3] and (Example.ini)[Example.ini].
+Note that everything is explained on the example. See [Example.au3](Example.au3) and [Example.ini](Example.ini).
