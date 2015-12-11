@@ -1,0 +1,9 @@
+[en]
+first_test=Hello, world!
+second_test=Hello, %s! How are you?
+third_test=Hi! The value of this product is: %.2f
+
+[pt]
+first_test=Olá, mundo!
+second_test=Olá, %s! Como vai você?
+third_test=Olá! O valor deste produto é: %.2f
