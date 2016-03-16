@@ -27,7 +27,8 @@ Func _i18n_SetGlobalFile($sGlobalFile) ; if only one file holds all the language
 EndFunc
 
 Func _($sText, $sPar1=Default, $sPar2=Default, $sPar3=Default, $sPar4=Default, $sPar5=Default, $sPar6=Default, $sPar7=Default, $sPar8=Default, $sPar9=Default, $sPar10=Default, $sPar11=Default, $sPar12=Default, $sPar13=Default, $sPar14=Default, $sPar15=Default, $sPar16=Default, $sPar17=Default, $sPar18=Default, $sPar19=Default, $sPar20=Default, $sPar21=Default, $sPar22=Default, $sPar23=Default, $sPar24=Default, $sPar25=Default, $sPar26=Default, $sPar27=Default, $sPar28=Default, $sPar29=Default, $sPar30=Default, $sPar31=Default, $sPar32=Default)
-
+	$workingdir = @WorkingDir
+	FileChangeDir($_i18n_LangBase)
 	$sControl = IniRead(__i18n_GetTranslationFile(), _i18n_GetLocale(), $sText, "I18N ERROR NO TRANSLATION") ; 4 chars lang code
 	If $sControl = "I18N ERROR NO TRANSLATION" Then $sControl = IniRead(__i18n_GetTranslationFile(), _i18n_GetLocale2(), $sText, "I18N ERROR NO TRANSLATION") ; 2 chars lang code
 	If $sControl = "I18N ERROR NO TRANSLATION" Then $sControl = IniRead(__i18n_GetTranslationFile(), $_i18n_Default, $sText, $sText) ; fallback lang
@@ -99,7 +100,7 @@ Func _($sText, $sPar1=Default, $sPar2=Default, $sPar3=Default, $sPar4=Default, $
 	ElseIf @NumParams = 33 Then
 		$sReturn = StringFormat($sControl, $sPar1, $sPar2, $sPar3, $sPar4, $sPar5, $sPar6, $sPar7, $sPar8, $sPar9, $sPar10, $sPar11, $sPar12, $sPar13, $sPar14, $sPar15, $sPar16, $sPar17, $sPar18, $sPar19, $sPar20, $sPar21, $sPar22, $sPar23, $sPar24, $sPar25, $sPar26, $sPar27, $sPar28, $sPar29, $sPar30, $sPar31, $sPar32)
 	EndIf
-
+	FileChangeDir($workingdir)
 	Return StringReplace($sReturn, "\n", @CRLF)
 EndFunc
 
